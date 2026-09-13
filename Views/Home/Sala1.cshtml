@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "Sala 1: Minecraft";
+}
+<h1>@ViewData["Title"]</h1>
+<body class = "bodySala1">
+    <section class = "sectionSala1">
+        <div>
+            <p>Luego de haberte quedado dormido, te despiertas en una sala misteriosa...</p>
+            <p>Para poder salir de la sala, debes resolver un acertijo. Si lo resuelves, podrás avanzar a la siguiente sala. Si no lo resuelves, deberás volver a intentarlo.</p>
+            <p>Luego de investigar un rato, te das cuenta de que ¡te despertaste en un videojuego!</p>
+        </div>
+    
+
+    <h2>Escribi los items que faltan para craftear el pico(*cantidad* items, *cantidad* items)</h2>
+        <img src="/imagenes/picoMinecraft.png" alt="crafteo">
+    <form action="@Url.Action("Sala2", "Home")" method="post" onsubmit="return comprobarRespuesta1()">
+    Respuesta: <input type="text" name="respuesta" id = "respuestaSala1"/>
+    <input type="submit" value="Enviar respuesta">
+    </form>
+    <input type="submit" value="Pista" onclick="pistaSala1()">
+
+    <p class ="pista" id = "pista"></p>
+
+    <p class = "mensajeError" id = "mensajeError"></p>
+
+    <form action="@Url.Action("Logout", "Home")" method="post">
+        <input type="submit" value="Cerrar sesión">
+    </form>
+</section>
+</body>
+
+
+
+

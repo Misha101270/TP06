@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Sala 3: Fortnite";
+}
+<h1>@ViewData["Title"]</h1>
+<body class = "bodySala3">
+    <section class = "sectionSala3">
+        <div>
+            <p>Estas cada vez mas cerca de lograrlo!</p>
+        </div>
+    
+
+    <h2>Cuales son los nombres que faltan en el mapa</h2>
+        <img class="imagenMapa" src="/imagenes/mapaFortnite.png" alt="mapaFortnite">
+    <form action="@Url.Action("Sala4", "Home")" method="post" onsubmit="return comprobarRespuesta3()">
+    Respuesta: <input type="text" name="respuesta" id = "respuestaSala3"/>
+    <input type="submit" value="Enviar respuesta">
+    </form>
+    <input type="submit" value="Pista" onclick="pistaSala3()">
+
+    <p class ="pista" id = "pista3"></p>
+
+    <p class = "mensajeError" id = "mensajeError3"></p>
+
+    <form action="@Url.Action("Logout", "Home")" method="post">
+        <input type="submit" value="Cerrar sesión">
+    </form>
+    
+</body>

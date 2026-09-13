@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Logeate</p>
+
+<form action="@Url.Action("Login", "Home")" method="post">
+<input type="text" name="nombreUsuario"/> 
+<input type="password" name="contraseña"/>
+<input type="submit" value="Logearse" onclick="return comprobarLogueo()"/>
+
+<p></p>
+
+</form>

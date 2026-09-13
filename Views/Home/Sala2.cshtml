@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Sala 2: pokemon";
+}
+<h1>@ViewData["Title"]</h1>
+<body class = "bodySala2">
+    <section class = "sectionSala2">
+        <div>
+            <p>Lograste pasar a la siguiente sala!</p>
+            <p>Ahora te das cuenta de que cambiaste de videojuego</p>
+        </div>
+    
+
+    <h2>Cuales son los pokemon que aparecen en las imagenes?</h2>
+        <img src=/imagenes/pikachu.jfif alt="pikachu">
+        <img src=/imagenes/charmander.jfif alt="charmander">
+        <img src=/imagenes/bulbasaur.png alt="bulbasaur">
+    <form action="@Url.Action("Sala3", "Home")" method="post" onsubmit="return comprobarRespuesta2()">
+    Respuesta: <input type="text" name="respuesta" id = "respuestaSala2"/>
+    <input type="submit" value="Enviar respuesta">
+    </form>
+    <input type="submit" value="Pista" onclick="pistaSala2()">
+
+    <p class ="pista" id = "pista2"></p>
+
+    <p class = "mensajeError" id = "mensajeError2"></p>
+
+    <form action="@Url.Action("Logout", "Home")" method="post">
+        <input type="submit" value="Cerrar sesión">
+    </form>
+    
+</body>

@@ -1,0 +1,65 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+.bodySala1{
+background-color: rgb(121, 221, 121);
+text-align: center;
+}
+.sectionSala1 div{
+  background-color: rgba(0, 0, 0, 0.548);
+  color: white;
+  border-radius: 40px;
+}
+.sectionSala1 img{
+  width: 40%;
+  height: 40%;
+  margin-bottom: 3%;
+}
+.mensajeError{
+  color: rgb(26, 19, 19);
+  background-color: red;
+}
+.pista{
+background-color: rgba(255, 255, 0, 0.575);
+color: black;
+}
+.bodySala2{
+  background-color: rgba(240, 65, 65, 0.671);
+  text-align: center;
+}
+.imagenMapa{
+  width: 40%;
+  height: 40%;
+}
+.bodySala3{
+  background-color: rgba(147, 132, 233, 0.671);
+  text-align: center;
+}

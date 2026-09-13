@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">GamerScape</h1>
+
+    <form action="@Url.Action("Registrarse", "Home")" method="get">
+        <input type="submit" value="Ir a registrarse">
+    </form>
+
+
+    <form action="@Url.Action("Login", "Home")" method="get">
+        <input type="submit" value="Iniciar sesión">
+    </form>
+
+    
+
+</div>
