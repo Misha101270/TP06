@@ -63,3 +63,401 @@ color: black;
   background-color: rgba(147, 132, 233, 0.671);
   text-align: center;
 }
+
+body:has(form[action*="Registrarse"]),
+body:has(input#nombreUsuario),
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]),
+body.bodySala1,
+body.bodySala2,
+body.bodySala3,
+body:has(#geometryDashGame),
+body:has(.geometry-dash-finish),
+body:has(h1.text-danger) {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255, 255, 255, .16), transparent 24rem),
+    linear-gradient(135deg, #f7f9fc 0%, #e8eef7 100%);
+  color: #172033;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+body:has(form[action*="Registrarse"]) .container,
+body:has(input#nombreUsuario) .container,
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]) .container,
+body.bodySala1 .container,
+body.bodySala2 .container,
+body.bodySala3 .container,
+body:has(#geometryDashGame) .container,
+body:has(.geometry-dash-finish) .container,
+body:has(h1.text-danger) .container {
+  max-width: 1120px;
+}
+
+body:has(form[action*="Registrarse"]) header,
+body:has(input#nombreUsuario) header,
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]) header,
+body.bodySala1 header,
+body.bodySala2 header,
+body.bodySala3 header,
+body:has(#geometryDashGame) header,
+body:has(.geometry-dash-finish) header,
+body:has(h1.text-danger) header {
+  background: rgba(255, 255, 255, .82);
+  border-bottom: 1px solid #dbe3ef;
+  box-shadow: 0 8px 24px rgba(24, 39, 75, .08);
+}
+
+body:has(form[action*="Registrarse"]) .navbar,
+body:has(input#nombreUsuario) .navbar,
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]) .navbar,
+body.bodySala1 .navbar,
+body.bodySala2 .navbar,
+body.bodySala3 .navbar,
+body:has(#geometryDashGame) .navbar,
+body:has(.geometry-dash-finish) .navbar,
+body:has(h1.text-danger) .navbar {
+  background: transparent !important;
+  margin-bottom: 0 !important;
+  padding: 1rem 0;
+}
+
+body:has(form[action*="Registrarse"]) .navbar-brand,
+body:has(input#nombreUsuario) .navbar-brand,
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]) .navbar-brand,
+body.bodySala1 .navbar-brand,
+body.bodySala2 .navbar-brand,
+body.bodySala3 .navbar-brand,
+body:has(#geometryDashGame) .navbar-brand,
+body:has(.geometry-dash-finish) .navbar-brand,
+body:has(h1.text-danger) .navbar-brand {
+  color: #172033 !important;
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+
+body:has(form[action*="Registrarse"]) .nav-link,
+body:has(input#nombreUsuario) .nav-link,
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]) .nav-link,
+body.bodySala1 .nav-link,
+body.bodySala2 .nav-link,
+body.bodySala3 .nav-link,
+body:has(#geometryDashGame) .nav-link,
+body:has(.geometry-dash-finish) .nav-link,
+body:has(h1.text-danger) .nav-link {
+  border-radius: 8px;
+  color: #56647a !important;
+  font-size: .9rem;
+  font-weight: 700;
+  margin-left: .35rem;
+  padding: .55rem .8rem !important;
+}
+
+body:has(form[action*="Registrarse"]) .nav-link:hover,
+body:has(input#nombreUsuario) .nav-link:hover,
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]) .nav-link:hover,
+body.bodySala1 .nav-link:hover,
+body.bodySala2 .nav-link:hover,
+body.bodySala3 .nav-link:hover,
+body:has(#geometryDashGame) .nav-link:hover,
+body:has(.geometry-dash-finish) .nav-link:hover,
+body:has(h1.text-danger) .nav-link:hover {
+  background: #e7edf6;
+  color: #172033 !important;
+}
+
+body:has(form[action*="Registrarse"]) main[role="main"],
+body:has(input#nombreUsuario) main[role="main"],
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]) main[role="main"],
+body:has(h1.text-danger) main[role="main"] {
+  background: rgba(255, 255, 255, .86);
+  border: 1px solid #dbe3ef;
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(31, 48, 84, .1);
+  margin: 2rem auto;
+  max-width: 640px;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+}
+
+body:has(form[action*="Registrarse"]) h1,
+body:has(input#nombreUsuario) h1,
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]) h1,
+body:has(h1.text-danger) h1 {
+  color: #172033 !important;
+  font-weight: 900;
+  letter-spacing: -.02em;
+}
+
+body:has(form[action*="Registrarse"]) form,
+body:has(input#nombreUsuario) form,
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]) form {
+  display: grid;
+  gap: .7rem;
+  margin: 1.5rem auto;
+  max-width: 430px;
+  text-align: left;
+}
+
+body:has(form[action*="Registrarse"]) form input[type="text"],
+body:has(form[action*="Registrarse"]) form input[type="password"],
+body:has(input#nombreUsuario) form input[type="text"],
+body:has(input#nombreUsuario) form input[type="password"],
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]) form input[type="text"],
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]) form input[type="password"] {
+  background: #fff;
+  border: 1px solid #cbd6e5;
+  border-radius: 9px;
+  color: #172033;
+  padding: .75rem .85rem;
+  width: 100%;
+}
+
+body:has(form[action*="Registrarse"]) form input[type="submit"],
+body:has(input#nombreUsuario) form input[type="submit"],
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]) form input[type="submit"] {
+  background: #176b87;
+  border: 0;
+  border-radius: 9px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 800;
+  margin-top: .35rem;
+  padding: .75rem 1rem;
+  transition: background .2s ease, transform .2s ease;
+}
+
+body:has(form[action*="Registrarse"]) form input[type="submit"]:hover,
+body:has(input#nombreUsuario) form input[type="submit"]:hover,
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]) form input[type="submit"]:hover {
+  background: #12566d;
+  transform: translateY(-1px);
+}
+
+body.bodySala1,
+body.bodySala2,
+body.bodySala3 {
+  text-align: center;
+}
+
+body.bodySala1 > h1,
+body.bodySala2 > h1,
+body.bodySala3 > h1 {
+  color: #172033;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 900;
+  margin: 2rem 0 1rem;
+}
+
+.sectionSala1,
+.sectionSala2,
+.sectionSala3 {
+  background: rgba(255, 255, 255, .9);
+  border: 1px solid rgba(203, 214, 229, .9);
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(31, 48, 84, .1);
+  margin: 0 auto 2rem;
+  max-width: 860px;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.sectionSala1 div,
+.sectionSala2 div,
+.sectionSala3 div {
+  background: #172033;
+  border-radius: 12px;
+  color: #fff;
+  margin-bottom: 1.75rem;
+  padding: 1rem 1.25rem;
+}
+
+.sectionSala1 h2,
+.sectionSala2 h2,
+.sectionSala3 h2 {
+  color: #263653;
+  font-size: clamp(1.15rem, 2.5vw, 1.65rem);
+  font-weight: 800;
+  margin: 1.25rem auto;
+  max-width: 680px;
+}
+
+.sectionSala1 img,
+.sectionSala2 img,
+.sectionSala3 img,
+.imagenMapa {
+  border: 5px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(31, 48, 84, .16);
+  height: auto;
+  margin: 0 .4rem 1.5rem;
+  max-height: 340px;
+  max-width: min(100%, 560px);
+  object-fit: cover;
+  width: auto;
+}
+
+.sectionSala2 img {
+  max-width: 220px;
+}
+
+.sectionSala1 form,
+.sectionSala2 form,
+.sectionSala3 form {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.sectionSala1 input[type="text"],
+.sectionSala2 input[type="text"],
+.sectionSala3 input[type="text"] {
+  border: 1px solid #cbd6e5;
+  border-radius: 8px;
+  padding: .65rem .8rem;
+}
+
+.sectionSala1 input[type="submit"],
+.sectionSala2 input[type="submit"],
+.sectionSala3 input[type="submit"] {
+  background: #176b87;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  padding: .65rem 1rem;
+}
+
+.sectionSala1 > input[type="submit"],
+.sectionSala2 > input[type="submit"],
+.sectionSala3 > input[type="submit"] {
+  background: #e09f3e;
+  color: #172033;
+}
+
+.sectionSala1 .mensajeError,
+.sectionSala2 .mensajeError,
+.sectionSala3 .mensajeError {
+  background: #ffe1e5;
+  border-radius: 8px;
+  color: #a1263b;
+  margin: 1rem auto;
+  max-width: 420px;
+  padding: .65rem;
+}
+
+.sectionSala1 .pista,
+.sectionSala2 .pista,
+.sectionSala3 .pista {
+  background: #fff3cd;
+  border-radius: 8px;
+  color: #765514;
+  margin: 1rem auto;
+  max-width: 520px;
+  padding: .65rem;
+}
+
+.sectionSala1 form[action*="Logout"],
+.sectionSala2 form[action*="Logout"],
+.sectionSala3 form[action*="Logout"] {
+  margin-top: 2rem;
+}
+
+.sectionSala1 form[action*="Logout"] input,
+.sectionSala2 form[action*="Logout"] input,
+.sectionSala3 form[action*="Logout"] input {
+  background: transparent;
+  border: 1px solid #9aaac0;
+  color: #56647a;
+}
+
+body:has(#geometryDashGame) .geometry-dash-page,
+body:has(.geometry-dash-finish) .geometry-dash-finish {
+  box-shadow: 0 18px 50px rgba(31, 48, 84, .18);
+}
+
+body:has(.geometry-dash-finish) .geometry-dash-finish {
+  margin-top: 3rem;
+}
+
+body:has(h1.text-danger) main[role="main"] h2,
+body:has(h1.text-danger) main[role="main"] h3 {
+  color: #a1263b !important;
+}
+
+body:has(form[action*="Registrarse"]) footer,
+body:has(input#nombreUsuario) footer,
+body:has(input[name="nombreUsuario"]):has(input[name="contraseña"]) footer,
+body.bodySala1 footer,
+body.bodySala2 footer,
+body.bodySala3 footer,
+body:has(#geometryDashGame) footer,
+body:has(.geometry-dash-finish) footer,
+body:has(h1.text-danger) footer {
+  background: transparent;
+  border-top-color: #dbe3ef !important;
+  padding: .8rem 0;
+}
+
+@media (max-width: 600px) {
+  .sectionSala1,
+  .sectionSala2,
+  .sectionSala3 {
+    border-radius: 12px;
+    padding: 1rem;
+  }
+
+  .sectionSala1 form,
+  .sectionSala2 form,
+  .sectionSala3 form {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .sectionSala1 form input,
+  .sectionSala2 form input,
+  .sectionSala3 form input {
+    width: 100%;
+  }
+}
+
+body:has(.sectionSala1) {
+  background: linear-gradient(135deg, #e9f8ec 0%, #b9e8c1 100%);
+}
+
+body:has(.sectionSala2) {
+  background: linear-gradient(135deg, #fff3d6 0%, #f5c56b 100%);
+}
+
+body:has(.sectionSala3) {
+  background: linear-gradient(135deg, #e6efff 0%, #9dbcf0 100%);
+}
+
+body:has(#geometryDashGame) {
+  background: linear-gradient(135deg, #c9f7f0 0%, #8aa8e8 100%);
+}
+
+.sectionSala3 .imagenMapa {
+  max-height: none;
+  max-width: 760px;
+  width: 92%;
+}
+
+p.pista:empty,
+p.mensajeError:empty {
+  display: none;
+}
+
+.geometry-dash-logout {
+  margin: 1.25rem 0 0;
+}
+
+.geometry-dash-logout input[type="submit"] {
+  background: transparent;
+  border: 1px solid rgba(215, 229, 255, .7);
+  border-radius: 8px;
+  color: #d7e5ff;
+  cursor: pointer;
+  padding: .6rem 1rem;
+}

@@ -51,32 +51,33 @@ public class HomeController : Controller
     {
         BD bd = new BD();
         if(bd.loguearse(nombreUsuario, contraseña) != null)
-        {
+        {   
             if(bd.buscarSalaActual(nombreUsuario, contraseña) == "1")
-       {
-            return RedirectToAction("Sala1");
-       }
-        else if(bd.buscarSalaActual(nombreUsuario, contraseña) == "0")
-       {
-            return RedirectToAction("Sala1");
-       }
-       else if(bd.buscarSalaActual(nombreUsuario, contraseña) == "2")
-       {
-            return RedirectToAction("Sala2");
-       }
-       else if(bd.buscarSalaActual(nombreUsuario, contraseña) == "3")
-       {
-            return RedirectToAction("Sala3");
-       }
-       else if(bd.buscarSalaActual(nombreUsuario, contraseña) == "4")
-       {
-            return RedirectToAction("Sala4");
-       }
-       else if(bd.buscarSalaActual(nombreUsuario, contraseña) == "5")
-       {
-            return RedirectToAction("Final");
-       }
-        } 
+            {
+                    return RedirectToAction("Sala1");
+            }
+                else if(bd.buscarSalaActual(nombreUsuario, contraseña) == "0")
+            {
+                    return RedirectToAction("Sala1");
+            }
+            else if(bd.buscarSalaActual(nombreUsuario, contraseña) == "2")
+            {
+                    return RedirectToAction("Sala2");
+            }
+            else if(bd.buscarSalaActual(nombreUsuario, contraseña) == "3")
+            {
+                    return RedirectToAction("Sala3");
+            }
+            else if(bd.buscarSalaActual(nombreUsuario, contraseña) == "4")
+            {
+                    return RedirectToAction("Sala4");
+            }
+            else if(bd.buscarSalaActual(nombreUsuario, contraseña) == "5")
+            {
+                    return RedirectToAction("Final");
+            }
+        } else{
+        }
             return View();
     }
     //action que guarde la partida en la base de datos y muestre la vista de la sala correspondiente

@@ -1,0 +1,240 @@
+@{
+	ViewData["Title"] = "Sala 4: Geometry Dash";
+}
+
+<style>
+	.geometry-dash-page {
+		--sky: #111b3d;
+		--sky-light: #263b78;
+		--neon: #61f4de;
+		--danger: #ff5577;
+		background: linear-gradient(160deg, var(--sky-light), var(--sky) 62%);
+		border-radius: 14px;
+		color: white;
+		margin: 1rem auto;
+		max-width: 980px;
+		padding: 1.5rem;
+		text-align: center;
+	}
+
+	.geometry-dash-page h1 {
+		color: var(--neon);
+		font-weight: 800;
+		letter-spacing: 0;
+	}
+
+	.geometry-dash-status {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 auto .75rem;
+		max-width: 900px;
+	}
+
+	#geometryDashCanvas {
+		background: #17265a;
+		border: 3px solid var(--neon);
+		border-radius: 8px;
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+		width: 900px;
+	}
+
+	.geometry-dash-help {
+		color: #d7e5ff;
+		margin: .8rem 0 0;
+	}
+
+	.geometry-dash-restart {
+		background: #61f4de;
+		border: 0;
+		border-radius: 6px;
+		color: #111b3d;
+		cursor: pointer;
+		font-weight: 700;
+		margin-top: .75rem;
+		padding: .65rem 1.1rem;
+	}
+</style>
+
+<main class="geometry-dash-page" id="geometryDashGame">
+	<h1>@ViewData["Title"]</h1>
+	<p>Corre hasta la meta sin tocar los obstaculos.</p>
+	<div class="geometry-dash-status" aria-live="polite">
+		<strong>Tiempo: <span id="geometryDashTimer">0</span> / 75 s</strong>
+		<strong id="geometryDashMessage">Preparado</strong>
+	</div>
+	<canvas id="geometryDashCanvas" width="900" height="320" aria-label="Juego de plataformas Geometry Dash"></canvas>
+	<button class="geometry-dash-restart" id="geometryDashRestart" type="button" hidden>Volver a empezar</button>
+	<p class="geometry-dash-help">Salta con la barra espaciadora o la flecha arriba.</p>
+	<form action="@Url.Action("Logout", "Home")" method="post" class="geometry-dash-logout">
+		<input type="submit" value="Cerrar sesión">
+	</form>
+</main>
+
+<script>
+(() => {
+	const canvas = document.getElementById('geometryDashCanvas');
+	const context = canvas.getContext('2d');
+	const timer = document.getElementById('geometryDashTimer');
+	const message = document.getElementById('geometryDashMessage');
+	const restartButton = document.getElementById('geometryDashRestart');
+	const finishUrl = '@Url.Action("Final", "Home")';
+	const duration = 75000;
+	const ground = 270;
+	const player = { x: 115, y: ground - 30, width: 30, height: 30, velocityY: 0, grounded: true };
+	const obstacles = [
+		{ x: 430, width: 32, height: 44 },
+		{ x: 650, width: 35, height: 62 },
+		{ x: 900, width: 32, height: 42 },
+		{ x: 1130, width: 50, height: 42, count: 2 },
+		{ x: 1400, width: 34, height: 52 },
+		{ x: 1640, width: 58, height: 58 },
+		{ x: 1950, width: 36, height: 48 },
+		{ x: 2200, width: 45, height: 64 },
+		{ x: 2510, width: 60, height: 42, count: 2 },
+		{ x: 2820, width: 35, height: 55 },
+		{ x: 3140, width: 65, height: 42, count: 2 },
+		{ x: 3490, width: 38, height: 58 },
+		{ x: 3820, width: 55, height: 60 },
+		{ x: 4200, width: 70, height: 60 },
+		{ x: 4630, width: 42, height: 60 },
+		{ x: 5050, width: 66, height: 60 }
+	];
+	let nextObstacleX = obstacles[obstacles.length - 1].x;
+	let startTime = performance.now();
+	let lastFrame = startTime;
+	let worldOffset = 0;
+	let animationId;
+	let gameOver = false;
+
+	function jump() {
+		if (!gameOver && player.grounded) {
+			player.velocityY = -12.5;
+			player.grounded = false;
+		}
+	}
+
+	function spikeCollides(playerBox, spikeX, spikeY, spikeWidth, spikeHeight) {
+		const playerBottom = playerBox.y + playerBox.height;
+		if (playerBox.x >= spikeX + spikeWidth || playerBox.x + playerBox.width <= spikeX ||
+			playerBottom <= spikeY || playerBox.y >= ground) {
+			return false;
+		}
+		const triangleDepth = Math.min(spikeHeight, playerBottom - spikeY);
+		const triangleHalfWidth = (spikeWidth / 2) * (triangleDepth / spikeHeight);
+		const triangleLeft = spikeX + (spikeWidth / 2) - triangleHalfWidth;
+		const triangleRight = spikeX + (spikeWidth / 2) + triangleHalfWidth;
+		return playerBox.x + playerBox.width > triangleLeft && playerBox.x < triangleRight;
+	}
+
+	function finishGame(text) {
+		gameOver = true;
+		message.textContent = text;
+		restartButton.hidden = false;
+		cancelAnimationFrame(animationId);
+	}
+
+	function restartGame() {
+		cancelAnimationFrame(animationId);
+		player.y = ground - player.height;
+		player.velocityY = 0;
+		player.grounded = true;
+		worldOffset = 0;
+		startTime = performance.now();
+		lastFrame = startTime;
+		gameOver = false;
+		restartButton.hidden = true;
+		message.textContent = 'Preparado';
+		timer.textContent = '0';
+		animationId = requestAnimationFrame(draw);
+	}
+
+	function draw(now) {
+		if (gameOver) return;
+		const elapsed = now - startTime;
+		const seconds = Math.min(75, Math.floor(elapsed / 1000));
+		timer.textContent = seconds;
+		if (elapsed >= duration) {
+			gameOver = true;
+			message.textContent = 'Meta alcanzada';
+			window.location.assign(finishUrl);
+			return;
+		}
+
+		const delta = Math.min(32, now - lastFrame) / 16.67;
+		lastFrame = now;
+		worldOffset += 5.2 * delta;
+		player.velocityY += .6 * delta;
+		player.y += player.velocityY * delta;
+		if (player.y >= ground - player.height) {
+			player.y = ground - player.height;
+			player.velocityY = 0;
+			player.grounded = true;
+		}
+
+		context.clearRect(0, 0, canvas.width, canvas.height);
+		context.fillStyle = '#1d3270';
+		context.fillRect(0, 0, canvas.width, canvas.height);
+		context.fillStyle = 'rgba(97, 244, 222, .14)';
+		for (let line = -((worldOffset * .35) % 90); line < canvas.width; line += 90) {
+			context.fillRect(line, 0, 2, ground);
+		}
+		context.fillStyle = '#0c1430';
+		context.fillRect(0, ground, canvas.width, canvas.height - ground);
+		context.fillStyle = '#61f4de';
+		context.fillRect(0, ground, canvas.width, 4);
+
+		while (nextObstacleX < worldOffset + canvas.width + 800) {
+			nextObstacleX += 260 + ((obstacles.length * 83) % 140);
+			const spikeCount = obstacles.length % 4 === 0 ? 2 : 1;
+			obstacles.push({ x: nextObstacleX, width: 32 + ((obstacles.length * 17) % 28), height: spikeCount === 2 ? 42 : 42 + ((obstacles.length * 29) % 20), count: spikeCount });
+		}
+
+		context.save();
+		context.translate(player.x, player.y);
+		context.rotate(player.grounded ? 0 : -.35);
+		context.fillStyle = '#ffdf5d';
+		context.fillRect(0, 0, player.width, player.height);
+		context.fillStyle = '#17265a';
+		context.fillRect(18, 7, 5, 5);
+		context.restore();
+
+		for (const obstacle of obstacles) {
+			const x = obstacle.x - worldOffset;
+			const y = ground - obstacle.height;
+			if (x > -obstacle.width && x < canvas.width) {
+				const spikeCount = obstacle.count || 1;
+				for (let spike = 0; spike < spikeCount; spike++) {
+					const spikeX = x + spike * obstacle.width;
+					context.fillStyle = '#ff5577';
+					context.beginPath();
+					context.moveTo(spikeX, ground);
+					context.lineTo(spikeX + obstacle.width / 2, y);
+					context.lineTo(spikeX + obstacle.width, ground);
+					context.closePath();
+					context.fill();
+				}
+				for (let spike = 0; spike < spikeCount; spike++) {
+					const spikeX = x + spike * obstacle.width;
+					if (spikeCollides(player, spikeX, y, obstacle.width, obstacle.height)) {
+						finishGame('Chocaste. Pulsa el boton para volver a empezar.');
+						return;
+					}
+				}
+			}
+		}
+		animationId = requestAnimationFrame(draw);
+	}
+
+	document.addEventListener('keydown', event => {
+		if (event.code === 'Space' || event.code === 'ArrowUp') {
+			event.preventDefault();
+			jump();
+		}
+	});
+	canvas.addEventListener('pointerdown', jump);
+	restartButton.addEventListener('click', restartGame);
+	animationId = requestAnimationFrame(draw);
+})();
+</script>

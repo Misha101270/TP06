@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Fin";
+}
+
+<style>
+    .geometry-dash-finish {
+        background: linear-gradient(145deg, #17265a, #0c1430);
+        border: 3px solid #61f4de;
+        border-radius: 14px;
+        color: white;
+        margin: 3rem auto;
+        max-width: 680px;
+        padding: 3rem 1.5rem;
+        text-align: center;
+    }
+
+    .geometry-dash-finish h1 {
+        color: #61f4de;
+        font-weight: 800;
+        letter-spacing: 0;
+    }
+</style>
+
+<main class="geometry-dash-finish">
+    <h1>¡Llegaste a la meta!</h1>
+    <p>Superaste la Sala 4 sin chocar con ningun obstaculo.</p>
+    <p>Gracias por jugar.</p>
+    <a class="btn btn-info" asp-controller="Home" asp-action="Sala1">Volver a la Sala 1</a>
+</main>

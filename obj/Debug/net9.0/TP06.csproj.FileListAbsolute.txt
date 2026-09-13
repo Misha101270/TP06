@@ -206,7 +206,6 @@ C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\rjs
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\scopedcss\bundle\TP06.styles.css
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\scopedcss\projectbundle\TP06.bundle.scp.css
-C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\compressed\7knrewp0mc-l9s0xmzwbk.gz
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\compressed\l424khjmqo-61n19gt1b8.gz
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\compressed\myogmasy63-x5km0u8i19.gz
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\compressed\ka9xf42kn5-bqjiyaj88i.gz
@@ -280,3 +279,5 @@ C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\ref
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\TP06.pdb
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\TP06.genruntimeconfig.cache
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\ref\TP06.dll
+C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\TP06.sourcelink.json
+C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\compressed\7knrewp0mc-36fzpzsbam.gz

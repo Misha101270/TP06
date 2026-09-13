@@ -31,7 +31,6 @@ public class BD
         using(SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = "UPDATE Jugadores SET Estado = @Pestado, salaActual = @PsalaActual WHERE NombreUsuario = @PnombreUsuario AND Contraseña = @Pcontraseña";
-            System.Console.WriteLine($"Jugador: {jugador.nombreUsuario}, Contraseña: {jugador.contraseña}, Estado: {jugador.estado}, SalaActual: {jugador.salaActual}");
             connection.Execute(query, new {Pestado = jugador.estado, PsalaActual = jugador.salaActual, PnombreUsuario = jugador.nombreUsuario, Pcontraseña = jugador.contraseña});
         }
     }
