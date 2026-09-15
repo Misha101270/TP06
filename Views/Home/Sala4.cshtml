@@ -218,7 +218,7 @@
 				for (let spike = 0; spike < spikeCount; spike++) {
 					const spikeX = x + spike * obstacle.width;
 					if (spikeCollides(player, spikeX, y, obstacle.width, obstacle.height)) {
-						finishGame('Chocaste. Pulsa el boton para volver a empezar.');
+						finishGame('Chocaste. Pulsa espacio para volver a empezar.');
 						return;
 					}
 				}
@@ -227,13 +227,24 @@
 		animationId = requestAnimationFrame(draw);
 	}
 
-	document.addEventListener('keydown', event => {
-		if (event.code === 'Space' || event.code === 'ArrowUp') {
-			event.preventDefault();
-			jump();
+	window.addEventListener('keydown', event => {
+		const isSpace = event.code === 'Space' || event.key === ' ' || event.key === 'Spacebar';
+		const isJumpKey = isSpace || event.code === 'ArrowUp';
+		if (!isJumpKey) return;
+		event.preventDefault();
+		if (isSpace && gameOver) {
+			restartGame();
+			return;
 		}
+		jump();
 	});
-	canvas.addEventListener('pointerdown', jump);
+	canvas.addEventListener('pointerdown', () => {
+		if (gameOver) {
+			restartGame();
+			return;
+		}
+		jump();
+	});
 	restartButton.addEventListener('click', restartGame);
 	animationId = requestAnimationFrame(draw);
 })();

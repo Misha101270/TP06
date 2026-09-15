@@ -1,22 +1,6 @@
-﻿function comprobarUsuario(){
-  const nombreUsuario = document.getElementById("nombreUsuario").value;
-  const contraseña = document.getElementById("contraseña").value;
-  const mensaje = document.getElementById("mensajeError");
-
-if (nombreUsuario < 3 || contraseña < 3){
-     mensaje.innerHTML = "la contraseña y el nombre deben tener mas de 2 caracteres";
-     return false;
-    }else{
-    return true;}
-
-    
-}
-function comprobarLogueo(jugadorId){
-    const nombreUsuario = document.getElementById("nombreUsuario").value;
-
-}
+﻿
 function comprobarRespuesta1(){
-  const respuesta = document.getElementById("respuestaSala1").value;
+  const respuesta = document.getElementById("respuestaSala1").value.toLowerCase();
   const mensaje = document.getElementById("mensajeError");
   if (respuesta == "2 palos, 1 hierro" || respuesta == "1 hierro, 2 palos" || respuesta == "2 palos, 1 lingote de hierro" || respuesta == "1 lingote de hierro, 2 palos"){
     return true;
@@ -35,7 +19,7 @@ function pistaSala1(){
   mensaje.innerHTML = "es un objeto fino de madera y otro un mineral";
 }
 function comprobarRespuesta2(){
-  const respuesta = document.getElementById("respuestaSala2").value;
+  const respuesta = document.getElementById("respuestaSala2").value.toLowerCase();
   const mensaje = document.getElementById("mensajeError2");
   if (respuesta == "pikachu, charmander, bulbasaur" || respuesta == "charmander, bulbasaur, pikachu" || respuesta == "bulbasaur, pikachu, charmander" || respuesta == "bulbasaur, charmander, pikachu" || respuesta == "charmander, pikachu, bulbasaur" || respuesta == "pikachu, bulbasaur, charmander"){
     return true;
@@ -50,7 +34,7 @@ function pistaSala2(){
   mensaje.innerHTML = "uno es amarilo, otro es rojo y el ultimo es verde";
 }
 function comprobarRespuesta3(){
-  const respuesta = document.getElementById("respuestaSala3").value;
+  const respuesta = document.getElementById("respuestaSala3").value.toLowerCase();
   const mensaje = document.getElementById("mensajeError3");
   if (respuesta == "pisos picados, parque placentero, ciudad comercio" || respuesta == "pisos picados, ciudad comercio, parque placentero" || respuesta == "ciudad comercio, pisos picados, parque placentero" || respuesta == "ciudad comercio, parque placentero, pisos picados" || respuesta == "parque placentero, pisos picados, ciudad comercio" || respuesta == "parque placentero, ciudad comercio, parque placentero"){
     return true;

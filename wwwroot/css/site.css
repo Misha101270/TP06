@@ -461,3 +461,233 @@ p.mensajeError:empty {
   cursor: pointer;
   padding: .6rem 1rem;
 }
+
+/* Sala 1: Minecraft */
+body:has(.sectionSala1) {
+  --room-ink: #26351d;
+  --room-panel: #e8d5a8;
+  --room-accent: #4f8f36;
+  --room-dark: #314d27;
+  background-color: #8fc95c;
+  background-image: linear-gradient(45deg, rgba(255,255,255,.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(46,77,36,.12) 25%, transparent 25%);
+  background-size: 34px 34px;
+  color: var(--room-ink);
+  font-family: "Courier New", monospace;
+}
+
+body:has(.sectionSala1) header {
+  background: #d7b878;
+  border-bottom: 4px solid #765532;
+}
+
+body:has(.sectionSala1) .navbar-brand,
+body:has(.sectionSala1) .nav-link {
+  color: #26351d !important;
+  font-family: "Courier New", monospace;
+}
+
+body:has(.sectionSala1) > h1 {
+  color: #fff7d1;
+  text-shadow: 3px 3px 0 #314d27;
+}
+
+body:has(.sectionSala1) .sectionSala1 {
+  background: var(--room-panel);
+  border: 5px solid #765532;
+  border-radius: 3px;
+  box-shadow: 10px 10px 0 rgba(49,77,39,.35);
+}
+
+body:has(.sectionSala1) .sectionSala1 div {
+  background: #496f35;
+  border: 3px solid #294422;
+  border-radius: 3px;
+  color: #fff7d1;
+  text-align: left;
+}
+
+body:has(.sectionSala1) .sectionSala1 h2 {
+  color: #314d27;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+}
+
+body:has(.sectionSala1) .sectionSala1 img {
+  border: 5px solid #765532;
+  border-radius: 2px;
+  box-shadow: 5px 5px 0 rgba(49,77,39,.35);
+}
+
+body:has(.sectionSala1) .sectionSala1 input[type="submit"] {
+  background: var(--room-accent);
+  border: 3px solid #315d24;
+  border-radius: 2px;
+  box-shadow: 3px 3px 0 #26351d;
+  color: #fff7d1;
+  font-family: inherit;
+}
+
+body:has(.sectionSala1) .sectionSala1 > input[type="submit"] {
+  background: #c7903e;
+  color: #26351d;
+}
+
+/* Sala 2: Pokemon */
+body:has(.sectionSala2) {
+  --pokemon-blue: #2168b1;
+  --pokemon-red: #dc3d46;
+  --pokemon-yellow: #ffd447;
+  background-color: #f7df75;
+  background-image: radial-gradient(circle, rgba(255,255,255,.5) 2px, transparent 3px);
+  background-size: 26px 26px;
+  color: #24344d;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+body:has(.sectionSala2) header {
+  background: #fff8db;
+  border-bottom: 4px solid var(--pokemon-blue);
+}
+
+body:has(.sectionSala2) .navbar-brand,
+body:has(.sectionSala2) .nav-link {
+  color: var(--pokemon-blue) !important;
+}
+
+body:has(.sectionSala2) > h1 {
+  color: #fff;
+  text-shadow: 3px 3px 0 var(--pokemon-blue);
+}
+
+body:has(.sectionSala2) .sectionSala2 {
+  background: #fffdf3;
+  border: 4px solid var(--pokemon-blue);
+  border-radius: 22px;
+  box-shadow: 0 12px 0 #174879, 0 20px 35px rgba(36,52,77,.2);
+}
+
+body:has(.sectionSala2) .sectionSala2 div {
+  background: var(--pokemon-red);
+  border: 4px solid #a32635;
+  border-radius: 14px;
+  color: #fff;
+}
+
+body:has(.sectionSala2) .sectionSala2 h2 {
+  color: var(--pokemon-blue);
+}
+
+body:has(.sectionSala2) .sectionSala2 img {
+  background: #fff;
+  border: 5px solid var(--pokemon-yellow);
+  border-radius: 50%;
+  box-shadow: 0 6px 0 #c7a52e;
+  object-fit: cover;
+  padding: 5px;
+}
+
+body:has(.sectionSala2) .sectionSala2 input[type="submit"] {
+  background: var(--pokemon-blue);
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 800;
+}
+
+body:has(.sectionSala2) .sectionSala2 > input[type="submit"] {
+  background: var(--pokemon-yellow);
+  color: #24344d;
+}
+
+/* Sala 3: Fortnite */
+body:has(.sectionSala3) {
+  --fortnite-blue: #1769d1;
+  --fortnite-pink: #ed3b9b;
+  --fortnite-ink: #162640;
+  background-color: #88d5eb;
+  background-image: linear-gradient(155deg, transparent 0 52%, rgba(255,255,255,.3) 52% 54%, transparent 54%),
+    linear-gradient(25deg, rgba(23,105,209,.12) 0 2px, transparent 2px 42px);
+  background-size: auto, 42px 42px;
+  color: var(--fortnite-ink);
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+body:has(.sectionSala3) header {
+  background: #142b55;
+  border-bottom: 4px solid var(--fortnite-pink);
+}
+
+body:has(.sectionSala3) .navbar-brand,
+body:has(.sectionSala3) .nav-link {
+  color: #fff !important;
+}
+
+body:has(.sectionSala3) > h1 {
+  color: #fff;
+  text-shadow: 4px 4px 0 var(--fortnite-pink);
+  transform: skew(-4deg);
+}
+
+body:has(.sectionSala3) .sectionSala3 {
+  background: rgba(255,255,255,.94);
+  border: 4px solid var(--fortnite-blue);
+  border-radius: 4px;
+  box-shadow: 12px 12px 0 rgba(22,38,64,.35);
+  transform: rotate(-.5deg);
+}
+
+body:has(.sectionSala3) .sectionSala3 div {
+  background: var(--fortnite-ink);
+  border-left: 8px solid var(--fortnite-pink);
+  border-radius: 2px;
+  color: #fff;
+  text-align: center;
+}
+
+body:has(.sectionSala3) .sectionSala3 div p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 760px;
+  text-align: center;
+}
+
+body:has(.sectionSala3) .sectionSala3 h2 {
+  color: var(--fortnite-blue);
+  text-transform: uppercase;
+}
+
+body:has(.sectionSala3) .sectionSala3 .imagenMapa {
+  border: 6px solid var(--fortnite-pink);
+  border-radius: 4px;
+  box-shadow: 7px 7px 0 rgba(22,38,64,.28);
+}
+
+body:has(.sectionSala3) .sectionSala3 input[type="submit"] {
+  background: var(--fortnite-blue);
+  border-radius: 3px;
+  box-shadow: 3px 3px 0 #0c3978;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+body:has(.sectionSala3) .sectionSala3 > input[type="submit"] {
+  background: var(--fortnite-pink);
+  box-shadow: 3px 3px 0 #9b2067;
+}
+
+body:has(.sectionSala1) .sectionSala1 input[type="text"],
+body:has(.sectionSala2) .sectionSala2 input[type="text"],
+body:has(.sectionSala3) .sectionSala3 input[type="text"] {
+  min-width: min(100%, 280px);
+}
+
+@media (max-width: 600px) {
+  body:has(.sectionSala3) .sectionSala3 {
+    transform: none;
+  }
+
+  body:has(.sectionSala2) .sectionSala2 img {
+    max-width: 42%;
+  }
+}

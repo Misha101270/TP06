@@ -207,7 +207,6 @@ C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\sco
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\scopedcss\bundle\TP06.styles.css
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\scopedcss\projectbundle\TP06.bundle.scp.css
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\compressed\l424khjmqo-61n19gt1b8.gz
-C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\compressed\myogmasy63-x5km0u8i19.gz
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\compressed\ka9xf42kn5-bqjiyaj88i.gz
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\compressed\d8wmx608j3-c2jlpeoesf.gz
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\compressed\6z5jhr684k-erw9l3u2r3.gz
@@ -280,4 +279,14 @@ C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\TP0
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\TP06.genruntimeconfig.cache
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\ref\TP06.dll
 C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\TP06.sourcelink.json
-C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\compressed\7knrewp0mc-36fzpzsbam.gz
+C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\compressed\myogmasy63-ly3fj7wnj1.gz
+C:\Users\vpode\OneDrive\Documentos\mijail\programacion\TP06\obj\Debug\net9.0\compressed\7knrewp0mc-n0ys32y2g6.gz
+C:\Users\vpode\AppData\Local\Temp\TP06-build-validation\appsettings.Development.json
+C:\Users\vpode\AppData\Local\Temp\TP06-build-validation\appsettings.json
+C:\Users\vpode\AppData\Local\Temp\TP06-build-validation\TP06.staticwebassets.runtime.json
+C:\Users\vpode\AppData\Local\Temp\TP06-build-validation\TP06.staticwebassets.endpoints.json
+C:\Users\vpode\AppData\Local\Temp\TP06-build-validation\TP06.exe
+C:\Users\vpode\AppData\Local\Temp\TP06-build-validation\TP06.deps.json
+C:\Users\vpode\AppData\Local\Temp\TP06-build-validation\TP06.runtimeconfig.json
+C:\Users\vpode\AppData\Local\Temp\TP06-build-validation\TP06.dll
+C:\Users\vpode\AppData\Local\Temp\TP06-build-validation\TP06.pdb
